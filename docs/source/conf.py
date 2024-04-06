@@ -35,7 +35,7 @@ html_context = {
   'current_version' : "latest",
   'versions' : [],
   'current_language': 'en',
-  'languages': [["en", "en"], ["zh_cn", "zh_cn"]]
+  'languages': [["en", "../en"], ["zh_cn", "../zh_cn"]]
 }
 
 # get the environment variable build_all_docs and pages_root
