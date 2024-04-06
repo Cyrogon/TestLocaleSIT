@@ -1,6 +1,7 @@
 # a single build step, which keeps conf.py and versions.yaml at the main branch
 # in generall we use environment variables to pass values to conf.py, see below
 # and runs the build as we did locally
+import os
 def build_doc(version, language, tag):
     os.environ["current_version"] = version
     os.environ["current_language"] = language
