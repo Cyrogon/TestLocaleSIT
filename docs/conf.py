@@ -18,7 +18,7 @@ author = 'Cyrogon'
 
 extensions = []
 
-templates_path = ['../templates']
+templates_path = ['/templates']
 exclude_patterns = []
 
 
@@ -27,9 +27,9 @@ exclude_patterns = []
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
 html_theme = 'alabaster'
-html_static_path = ['_static']
+html_static_path = ['source/_static']
 html_theme = 'sphinx_rtd_theme'
-locale_dirs = ['../locales']
+locale_dirs = ['locales']
 
 html_context = {
   'current_version' : "latest",
