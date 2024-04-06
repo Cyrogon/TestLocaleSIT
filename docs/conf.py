@@ -29,7 +29,7 @@ exclude_patterns = []
 html_theme = 'alabaster'
 html_static_path = ['source/_static']
 html_theme = 'sphinx_rtd_theme'
-locale_dirs = ['locales']
+locale_dirs = ['/locales']
 
 html_context = {
   'current_version' : "latest",

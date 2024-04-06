@@ -13,3 +13,8 @@
   languages: 
     - "zh_cn"
     - "en"
+"latest"
+  tag: 'latest'
+  languages: 
+    - "zh_cn"
+    - "en"
