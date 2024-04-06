@@ -28,6 +28,8 @@ build_doc("latest", "en", "main")
 move_dir("./build/html/", "../pages/en/")
 build_doc("latest", "zh_cn", "main")
 move_dir("./build/html/", "../pages/zh_cn/")
+build_doc("latest", "de", "main")
+move_dir("./build/html/", "../pages/de/")
 
 # reading the yaml file
 with open("versions.yaml", "r") as yaml_file:
