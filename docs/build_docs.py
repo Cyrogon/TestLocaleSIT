@@ -25,7 +25,7 @@ os.environ["pages_root"] = "https://cyrogon.github.io/TestLocaleSIT/"
 
 # manually the main branch build in the current supported languages
 build_doc("latest", "en", "main")
-move_dir("./build/html/", "../pages/")
+move_dir("./build/html/", "../pages/en/")
 build_doc("latest", "de", "main")
 move_dir("./build/html/", "../pages/de/")
 
