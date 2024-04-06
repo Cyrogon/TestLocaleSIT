@@ -6,6 +6,9 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
+import yaml
+import os
+
 project = 'TestLocale'
 copyright = '2024, Cyrogon'
 author = 'Cyrogon'
@@ -54,9 +57,8 @@ if build_all_docs is not None:
     'versions' : [],
   }
 
-
   # and we append all versions and langauges accordingly 
-  # we treat t he main branch as latest 
+  # we treat the main branch as latest 
   if (current_version == 'latest'):
     html_context['languages'].append(['en', pages_root])
     html_context['languages'].append(['de', pages_root+'/de'])
