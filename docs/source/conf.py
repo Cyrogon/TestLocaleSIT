@@ -34,7 +34,7 @@ html_context = {
   'current_version' : "latest",
   'versions' : [],
   'current_language': 'en',
-  'languages': [["en", "en"], ["zh_cn", "zh_cn"], ["de", "de"]]
+  'languages': [["en", "en"], ["zh_cn", "zh_cn"], ["de", "de"], ["fr", "fr"]]
 }
 
 # get the environment variable build_all_docs and pages_root
@@ -62,6 +62,7 @@ if build_all_docs is not None:
     html_context['languages'].append(['en', pages_root+'/en'])
     html_context['languages'].append(['zh_cn', pages_root+'/zh_cn'])
     html_context['languages'].append(['de', pages_root+'/de'])
+    html_context['languages'].append(['fr', pages_root+'/fr'])
 
   if (current_language == 'en'):
     html_context['versions'].append(['latest', pages_root+'/en'])
@@ -69,6 +70,8 @@ if build_all_docs is not None:
     html_context['versions'].append(['latest', pages_root+'/zh_cn'])
   if (current_language == 'de'):
     html_context['versions'].append(['latest', pages_root+'/de'])
+  if (current_language == 'fr'):
+    html_context['versions'].append(['latest', pages_root+'/fr'])
 
   # and loop over all other versions from our yaml file
   # to set versions and languages
