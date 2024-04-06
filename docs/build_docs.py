@@ -10,7 +10,6 @@ def build_doc(version, language, tag):
     subprocess.run("git checkout " + tag, shell=True)
     subprocess.run("git checkout main -- conf.py", shell=True)
     subprocess.run("git checkout main -- versions.yaml", shell=True)
-    subprocess.run("doxygen Doxyfile", shell=True)
     os.environ['SPHINXOPTS'] = "-D language='{}'".format(language)
     subprocess.run("make html", shell=True)    
 
@@ -26,9 +25,9 @@ os.environ["pages_root"] = "https://cyrogon.github.io/TestLocaleSIT/"
 
 # manually the main branch build in the current supported languages
 build_doc("latest", "en", "main")
-move_dir("./_build/html/", "../pages/")
+move_dir("./build/html/", "../pages/")
 build_doc("latest", "de", "main")
-move_dir("./_build/html/", "../pages/de/")
+move_dir("./build/html/", "../pages/de/")
 
 # reading the yaml file
 with open("versions.yaml", "r") as yaml_file:
@@ -39,4 +38,4 @@ for version, details in docs.items():
   tag = details.get('tag', '')
   for language in details.get('languages', []): 
     build_doc(version, language, version)
-    move_dir("./_build/html/", "../pages/"+version+'/'+language+'/')
+    move_dir("./build/html/", "../pages/"+version+'/'+language+'/')
