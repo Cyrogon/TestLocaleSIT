@@ -2,6 +2,7 @@
 # in generall we use environment variables to pass values to conf.py, see below
 # and runs the build as we did locally
 import os
+import subprocess
 def build_doc(version, language, tag):
     os.environ["current_version"] = version
     os.environ["current_language"] = language

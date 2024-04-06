@@ -35,6 +35,7 @@ jobs:
           sudo pip3 install sphinx_rtd_theme
           sudo pip3 install breathe
           sudo pip3 install linuxdoc
+          sudo pip3 install pyyaml
           sudo npm install -g jsdoc
           git fetch --tags
           cd docs
