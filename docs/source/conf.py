@@ -70,7 +70,7 @@ if build_all_docs is not None:
 
   # and loop over all other versions from our yaml file
   # to set versions and languages
-  with open("versions.yaml", "r") as yaml_file:
+  with open("../versions.yaml", "r") as yaml_file:
     docs = yaml.safe_load(yaml_file)
 
   if (current_version != 'latest'):
