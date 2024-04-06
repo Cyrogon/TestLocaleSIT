@@ -26,8 +26,8 @@ os.environ["pages_root"] = "https://cyrogon.github.io/TestLocaleSIT/"
 # manually the main branch build in the current supported languages
 build_doc("latest", "en", "main")
 move_dir("./build/html/", "../pages/en/")
-build_doc("latest", "de", "main")
-move_dir("./build/html/", "../pages/de/")
+build_doc("latest", "zh_cn", "main")
+move_dir("./build/html/", "../pages/zh_cn/")
 
 # reading the yaml file
 with open("versions.yaml", "r") as yaml_file:
