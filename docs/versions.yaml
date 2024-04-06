@@ -8,13 +8,3 @@
   languages: 
     - "zh_cn"
     - "en"
-"3.0":
-  tag: '3.0'  
-  languages: 
-    - "zh_cn"
-    - "en"
-"latest":
-  tag: 'latest'
-  languages: 
-    - "zh_cn"
-    - "en"
