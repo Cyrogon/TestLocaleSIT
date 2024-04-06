@@ -3,6 +3,7 @@
 # and runs the build as we did locally
 import os
 import subprocess
+import yaml
 def build_doc(version, language, tag):
     os.environ["current_version"] = version
     os.environ["current_language"] = language
