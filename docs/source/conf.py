@@ -60,7 +60,7 @@ if build_all_docs is not None:
   # and we append all versions and langauges accordingly 
   # we treat the main branch as latest 
   if (current_version == 'latest'):
-    html_context['languages'].append(['en', pages_root]+'/en')
+    html_context['languages'].append(['en', pages_root+'/en'])
     html_context['languages'].append(['zh_cn', pages_root+'/zh_cn'])
 
   if (current_language == 'en'):
