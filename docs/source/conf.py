@@ -34,7 +34,7 @@ html_context = {
   'current_version' : "latest",
   'versions' : [],
   'current_language': 'en',
-  'languages': [["en", "en"], ["zh_cn", "zh_cn"], ["de", "de"], ["fr", "fr"], ["es", "es"]]
+  'languages': [["en", "en"], ["zh_CN", "zh_CN"], ["de", "de"], ["fr", "fr"], ["es", "es"]]
 }
 
 # get the environment variable build_all_docs and pages_root
@@ -60,15 +60,15 @@ if build_all_docs is not None:
   # we treat the main branch as latest 
   if (current_version == 'latest'):
     html_context['languages'].append(['en', pages_root+'/en'])
-    html_context['languages'].append(['zh_cn', pages_root+'/zh_cn'])
+    html_context['languages'].append(['zh_CN', pages_root+'/zh_CN'])
     html_context['languages'].append(['de', pages_root+'/de'])
     html_context['languages'].append(['fr', pages_root+'/fr'])
     html_context['languages'].append(['es', pages_root+'/es'])
 
   if (current_language == 'en'):
     html_context['versions'].append(['latest', pages_root+'/en'])
-  if (current_language == 'zh_cn'):
-    html_context['versions'].append(['latest', pages_root+'/zh_cn'])
+  if (current_language == 'zh_CN'):
+    html_context['versions'].append(['latest', pages_root+'/zh_CN'])
   if (current_language == 'de'):
     html_context['versions'].append(['latest', pages_root+'/de'])
   if (current_language == 'fr'):
