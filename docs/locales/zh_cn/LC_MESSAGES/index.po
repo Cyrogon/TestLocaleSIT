@@ -21,13 +21,13 @@ msgstr ""
 
 #: ../../source/index.rst:7
 msgid "Home"
-msgstr ""
+msgstr "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
 
 #: ../../source/index.rst:2
 msgid "Welcome to TestLocale's documentation!"
-msgstr ""
+msgstr "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
 
 #: ../../source/index.rst:5
 msgid "Testing the text for translation"
-msgstr ""
+msgstr "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
 
