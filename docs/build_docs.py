@@ -10,6 +10,7 @@ langs = []
 # Create a fucntion that makes a shorthand for the make command as well as setting OS vars
 # before execution
 def build_doc(version, language, tag):
+    print ("FINDMEDOCS")
     os.environ["current_version"] = version
     os.environ["current_language"] = language
     subprocess.run("git checkout {}".format(tag), shell=True)
