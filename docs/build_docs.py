@@ -25,6 +25,8 @@ def move_dir(src, dst):
   subprocess.run(["mkdir", "-p", dst])
   subprocess.run("mv "+src+'* ' + dst, shell=True)
 
+print(os.getcwd())
+
 # List all Langs in the Locales folder for building
 langs = os.listdir("docs/locales")
 
