@@ -1,7 +1,6 @@
 import os
 import subprocess
 import yaml
-import csv
 
 # Define an array
 langs = []
@@ -19,6 +18,8 @@ def build_doc(version, language, tag):
 
 os.environ["build_all_docs"] = str(True)
 os.environ["pages_root"] = "https://cyrogon.github.io/TestLocaleSIT"
+
+print("FINDMENOW" + os.environ.get("build_all_docs"))
 
 # Create a shorthand for making and moving a directory
 def move_dir(src, dst):
