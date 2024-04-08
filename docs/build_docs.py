@@ -7,7 +7,7 @@ langs = ["en"]
 
 # Create a fucntion that makes a shorthand for the make command as well as setting OS vars
 # before execution
-def build_doc(version, language, tag):
+def build_doc(version, language):
     os.environ["current_version"] = version
     os.environ["current_language"] = language
     os.environ['SPHINXOPTS'] = "-D language='{}'".format(language)
@@ -26,7 +26,7 @@ langs += os.listdir("locales")
 
 # Iterate over all found languages and build then move each one to it's designated dir
 for i in langs:
-   build_doc("latest", i, "py-rewrite")
+   build_doc("latest", i)
    move_dir("./build/html/", "../pages/{}".format(i))
 
 # Move the index.html to the root pages directory so it redirects to the en docs
@@ -40,5 +40,5 @@ with open("versions.yaml", "r") as yaml_file:
 for version, details in docs.items():
   tag = details.get('tag', '')
   for language in details.get('languages', []): 
-    build_doc(version, language, version)
+    build_doc(version, language)
     move_dir("./build/html/", "../pages/"+version+'/'+language+'/')
