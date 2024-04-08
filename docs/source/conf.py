@@ -9,9 +9,6 @@
 import os
 import yaml
 
-langs = ["en"]
-langs += os.listdir("locales")
-
 project = 'TestLocale'
 copyright = '2024, Cyrogon'
 author = 'Cyrogon'
@@ -32,6 +29,9 @@ exclude_patterns = []
 html_static_path = ['static']
 html_theme = 'sphinx_rtd_theme'
 locale_dirs = ['../locales']
+
+langs = ["en"]
+langs += os.listdir("../locales")
 
 html_context = {
   'current_version' : "latest",
