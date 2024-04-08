@@ -7,7 +7,7 @@ name: CI
 on:
   # Triggers the workflow on push or pull request events but only for the "main" branch
   push:
-    branches: [ "main" ]
+    branches: [ "py-rewrite" ]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -18,25 +18,19 @@ jobs:
     permissions:
       id-token: write
       pages: write
+      contents: read
     steps:
       - uses: actions/checkout@v3
+      - uses: actions/setup-node@v4
       - name: build
         run: |
-          sudo apt-get update
-          sudo apt-get install git -y
-          sudo apt install python3-pip -y
-          sudo apt install locales
-          sudo locale-gen en_US.UTF-8
-          sudo apt-get install doxygen -y
-          sudo apt-get install graphviz -y
-          sudo apt install npm -y
-          sudo pip3 install sphinx
-          sudo pip3 install sphinx-js
-          sudo pip3 install sphinx_rtd_theme
-          sudo pip3 install breathe
-          sudo pip3 install linuxdoc
-          sudo pip3 install pyyaml
-          sudo npm install -g jsdoc
+          pip3 install sphinx
+          pip3 install sphinx-js
+          pip3 install sphinx_rtd_theme
+          pip3 install breathe
+          pip3 install linuxdoc
+          pip3 install pyyaml
+          npm install -g jsdoc
           git fetch --tags
           cd docs
           mkdir build
