@@ -9,3 +9,6 @@ Welcome to TestLocale's documentation!
    
    Home <self>
    page1
+
+.. image:: _static/images/FirewallMessage.png
+   :width: 700
