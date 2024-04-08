@@ -27,7 +27,7 @@ exclude_patterns = []
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
-html_static_path = ['_static']
+html_static_path = ['static']
 html_theme = 'sphinx_rtd_theme'
 locale_dirs = ['../locales']
 
@@ -35,7 +35,7 @@ html_context = {
   'current_version' : "latest",
   'versions' : [],
   'current_language': 'en',
-  'languages': [["en", "en"], ["zh_CN", "zh_CN"], ["de", "de"], ["fr", "fr"], ["es", "es"]]
+  'languages': ["en", "zh_CN", "de", "fr", "es"]
 }
 
 # get the environment variable build_all_docs and pages_root

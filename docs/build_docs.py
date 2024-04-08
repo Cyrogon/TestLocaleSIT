@@ -1,7 +1,6 @@
 import os
 import subprocess
 import yaml
-from datetime import datetime
 
 # Define an array with en inside since en will always build
 langs = ["en"]
@@ -25,18 +24,21 @@ def move_dir(src, dst):
 # List all Langs in the Locales folder for building
 langs += os.listdir("locales")
 
+os.environ["lang_array"] = langs
+
 # Iterate over all found languages and build then move each one to it's designated dir
 for i in langs:
    build_doc("latest", i, "py-rewrite")
    move_dir("./build/html/", "../pages/{}".format(i))
 
+# Move the index.html to the root pages directory so it redirects to the en docs
 subprocess.run("mv ./templates/index.html ../pages/index.html", shell=True)
 
-# reading the yaml file
+# Open the versions files to see what versions to build and what langs they supported
 with open("versions.yaml", "r") as yaml_file:
   docs = yaml.safe_load(yaml_file)
 
-# and looping over all values to call our build with version, language and its tag
+# Loop over all the values and build the versions with their respective language
 for version, details in docs.items():
   tag = details.get('tag', '')
   for language in details.get('languages', []): 
