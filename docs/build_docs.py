@@ -22,7 +22,7 @@ def build_doc(version, language, tag):
     os.environ["current_version"] = version
     os.environ["current_language"] = language
     subprocess.run("git checkout {}".format(tag), shell=True)
-    subprocess.run("git checkout {} -- conf.py".format(tag), shell=True)
+    subprocess.run("git checkout {} -- source/conf.py".format(tag), shell=True)
     subprocess.run("git checkout {} -- versions.yaml".format(tag), shell=True)
     os.environ['SPHINXOPTS'] = "-D language='{}'".format(language)
     subprocess.run("make html", shell=True)
@@ -43,6 +43,7 @@ print(os.getcwd())
 
 # List all Langs in the Locales folder for building
 langs = os.listdir("locales")
+langs.append("en")
 
 # Iterate over all found languages and build then move each one to it's designated dir
 for i in langs:
