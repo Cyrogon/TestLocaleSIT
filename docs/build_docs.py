@@ -9,8 +9,8 @@ now = datetime.now()
  
 print("now =", now)
 
-# Define an array
-langs = []
+# Define an array with en inside since en will always build
+langs = ["en"]
 
 # Create a fucntion that makes a shorthand for the make command as well as setting OS vars
 # before execution
@@ -42,8 +42,7 @@ def move_dir(src, dst):
 print(os.getcwd())
 
 # List all Langs in the Locales folder for building
-langs = os.listdir("locales")
-langs.append("en")
+langs += os.listdir("locales")
 
 # Iterate over all found languages and build then move each one to it's designated dir
 for i in langs:
