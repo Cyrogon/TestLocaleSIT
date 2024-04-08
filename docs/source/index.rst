@@ -10,5 +10,5 @@ Welcome to TestLocale's documentation!
    Home <self>
    page1
 
-.. image:: ../pages/images/FirewallMessage.png
+.. image:: ../images/FirewallMessage.png
    :width: 700
