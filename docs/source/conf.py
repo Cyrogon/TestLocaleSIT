@@ -41,8 +41,8 @@ html_context = {
 }
 
 # get the environment variable build_all_docs and pages_root
-build_all_docs = os.environ.get("build_all_docs", str(True))
-pages_root = os.environ.get("pages_root", "https://cyrogon.github.io/TestLocaleSIT")
+build_all_docs = os.environ.get("build_all_docs")
+pages_root = os.environ.get("pages_root")
 
 # if not there, we dont call this
 if build_all_docs is not None:
@@ -52,32 +52,9 @@ if build_all_docs is not None:
 
   # we set the html_context wit current language and version 
   # and empty languages and versions for now
-  html_context = {
-    'current_language' : current_language,
-    'languages' : [],
-    'current_version' : current_version,
-    'versions' : [],
-  }
 
   # and we append all versions and langauges accordingly 
   # we treat the main branch as latest 
-  if (current_version == 'latest'):
-    html_context['languages'].append(['en', pages_root+'/en'])
-    html_context['languages'].append(['zh_CN', pages_root+'/zh_CN'])
-    html_context['languages'].append(['de', pages_root+'/de'])
-    html_context['languages'].append(['fr', pages_root+'/fr'])
-    html_context['languages'].append(['es', pages_root+'/es'])
-
-  if (current_language == 'en'):
-    html_context['versions'].append(['latest', pages_root+'/en'])
-  if (current_language == 'zh_CN'):
-    html_context['versions'].append(['latest', pages_root+'/zh_CN'])
-  if (current_language == 'de'):
-    html_context['versions'].append(['latest', pages_root+'/de'])
-  if (current_language == 'fr'):
-    html_context['versions'].append(['latest', pages_root+'/fr'])
-  if (current_language == 'es'):
-    html_context['versions'].append(['latest', pages_root+'/es'])
 
   # and loop over all other versions from our yaml file
   # to set versions and languages
