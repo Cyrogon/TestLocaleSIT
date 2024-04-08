@@ -38,8 +38,8 @@ html_context = {
 }
 
 # get the environment variable build_all_docs and pages_root
-build_all_docs = os.environ.get("build_all_docs")
-pages_root = os.environ.get("pages_root", "")
+build_all_docs = os.environ.get("build_all_docs", str(True))
+pages_root = os.environ.get("pages_root", "https://cyrogon.github.io/TestLocaleSIT")
 
 # if not there, we dont call this
 if build_all_docs is not None:
