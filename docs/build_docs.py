@@ -35,7 +35,6 @@ print(os.getcwd())
 langs = os.listdir("locales")
 
 # Iterate over all found languages and build then move each one to it's designated dir
-"""
 for i in langs:
    build_doc("latest", i, "py-rewrite")
    move_dir("./build/html/", "../pages/{}".format(i))
@@ -50,4 +49,3 @@ for version, details in docs.items():
   for language in details.get('languages', []): 
     build_doc(version, language, version)
     move_dir("./build/html/", "../pages/"+version+'/'+language+'/')
-"""
