@@ -17,7 +17,7 @@ author = 'Cyrogon'
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
 extensions = []
-
+exclude_patterns = ["*.png"]
 templates_path = ['../templates']
 exclude_patterns = []
 
@@ -29,6 +29,7 @@ exclude_patterns = []
 html_static_path = ['static']
 html_theme = 'sphinx_rtd_theme'
 locale_dirs = ['../locales']
+html_scaled_image_link = False
 
 langs = ["en"]
 langs += os.listdir("../locales")
