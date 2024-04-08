@@ -1,8 +1,13 @@
 import os
 import subprocess
 import yaml
+from datetime import datetime
 
-print("FINDMEBUILD")
+print("FINDMEBUILD" + os.times())
+
+now = datetime.now()
+ 
+print("now =", now)
 
 # Define an array
 langs = []
@@ -10,6 +15,9 @@ langs = []
 # Create a fucntion that makes a shorthand for the make command as well as setting OS vars
 # before execution
 def build_doc(version, language, tag):
+    now = datetime.now()
+ 
+    print("now =", now)
     print ("FINDMEDOCS")
     os.environ["current_version"] = version
     os.environ["current_language"] = language
@@ -23,7 +31,9 @@ os.environ["build_all_docs"] = str(True)
 os.environ["pages_root"] = "https://cyrogon.github.io/TestLocaleSIT"
 
 print("FINDMENOW" + os.environ.get("build_all_docs"))
-
+now = datetime.now()
+ 
+print("now =", now)
 # Create a shorthand for making and moving a directory
 def move_dir(src, dst):
   subprocess.run(["mkdir", "-p", dst])
