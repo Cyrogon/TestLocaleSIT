@@ -30,6 +30,8 @@ for i in langs:
    build_doc("latest", i, "py-rewrite")
    move_dir("./build/html/", "../pages/{}".format(i))
 
+subprocess.run("mv ./templates/index.html ../pages/index.html", shell=True)
+
 # reading the yaml file
 with open("versions.yaml", "r") as yaml_file:
   docs = yaml.safe_load(yaml_file)
