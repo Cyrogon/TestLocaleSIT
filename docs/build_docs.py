@@ -11,9 +11,9 @@ langs = []
 def build_doc(version, language, tag):
     os.environ["current_version"] = version
     os.environ["current_language"] = language
-    subprocess.run("git checkout " + tag, shell=True)
-    subprocess.run("git checkout main -- conf.py", shell=True)
-    subprocess.run("git checkout main -- versions.yaml", shell=True)
+    subprocess.run("git checkout {}".format(tag), shell=True)
+    subprocess.run("git checkout {} -- conf.py".format(tag), shell=True)
+    subprocess.run("git checkout {} -- versions.yaml".format(tag), shell=True)
     os.environ['SPHINXOPTS'] = "-D language='{}'".format(language)
     subprocess.run("make html", shell=True)
 
@@ -30,7 +30,7 @@ langs = os.listdir("docs\\locales")
 
 # Iterate over all found languages and build then move each one to it's designated dir
 for i in langs:
-   build_doc("latest", i, "main")
+   build_doc("latest", i, "py-rewrite")
    move_dir("./build/html/", "../pages/{}".format(i))
 
 # reading the yaml file
