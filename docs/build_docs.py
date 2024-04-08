@@ -28,7 +28,7 @@ def move_dir(src, dst):
 print(os.getcwd())
 
 # List all Langs in the Locales folder for building
-langs = os.listdir("docs/locales")
+langs = os.listdir("locales")
 
 # Iterate over all found languages and build then move each one to it's designated dir
 for i in langs:
