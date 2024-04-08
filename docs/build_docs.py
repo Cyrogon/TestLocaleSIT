@@ -2,6 +2,8 @@ import os
 import subprocess
 import yaml
 
+print("FINDMEBUILD")
+
 # Define an array
 langs = []
 
