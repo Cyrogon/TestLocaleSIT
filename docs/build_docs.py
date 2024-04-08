@@ -21,11 +21,8 @@ def build_doc(version, language, tag):
     print ("FINDMEDOCS")
     os.environ["current_version"] = version
     os.environ["current_language"] = language
-    subprocess.run("git checkout {}".format(tag), shell=True)
-    subprocess.run("git checkout {} -- source/conf.py".format(tag), shell=True)
-    subprocess.run("git checkout {} -- versions.yaml".format(tag), shell=True)
     os.environ['SPHINXOPTS'] = "-D language='{}'".format(language)
-    subprocess.run("make html", shell=True)
+    subprocess.run("TZ=UTC make html", shell=True)
 
 os.environ["build_all_docs"] = str(True)
 os.environ["pages_root"] = "https://cyrogon.github.io/TestLocaleSIT"
