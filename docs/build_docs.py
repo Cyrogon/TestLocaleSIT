@@ -3,7 +3,7 @@ import subprocess
 import yaml
 from datetime import datetime
 
-print("FINDMEBUILD" + os.times())
+print("FINDMEBUILD")
 
 now = datetime.now()
  
