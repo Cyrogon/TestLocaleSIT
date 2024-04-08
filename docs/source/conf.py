@@ -9,6 +9,8 @@
 import os
 import yaml
 
+langs = ["en"]
+langs += os.listdir("locales")
 
 project = 'TestLocale'
 copyright = '2024, Cyrogon'
@@ -35,7 +37,7 @@ html_context = {
   'current_version' : "latest",
   'versions' : [],
   'current_language': 'en',
-  'languages': ["en", "zh_CN", "de", "fr", "es"]
+  'languages': langs
 }
 
 # get the environment variable build_all_docs and pages_root
