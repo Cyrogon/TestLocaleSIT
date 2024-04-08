@@ -30,6 +30,7 @@ html_theme = 'sphinx_rtd_theme'
 locale_dirs = ['../locales']
 html_scaled_image_link = False
 
+# Same as in build_docs.py, set a lang array, starting with en since that will always build, and adding all other avalible locales to it after
 langs = ["en"]
 langs += os.listdir("../locales")
 
@@ -37,9 +38,11 @@ langs += os.listdir("../locales")
 build_all_docs = os.environ.get("build_all_docs", str(True))
 pages_root = os.environ.get("pages_root", "https://cyrogon.github.io/TestLocaleSIT")
 
+# Get the current language and version from the OS enviroment variables set in the build_docs.py
 current_language = os.environ.get("current_language")
 current_version = os.environ.get("current_version")
 
+# Initialize the HTML context for later use
 html_context = {
   'current_language' : current_language,
   'languages' : [],
@@ -47,6 +50,7 @@ html_context = {
   'versions' : [],
 }
 
+# Checks if we are currently building the latest version, and if so, appends only the lang identifier to the language redirects from all avalible locales
 if (current_version == 'latest'):
   for lang in langs:
     html_context['languages'].append([lang, "{}/{}".format(pages_root, lang)])
@@ -54,11 +58,11 @@ if (current_version == 'latest'):
 html_context['versions'].append(['latest', "{}/{}".format(pages_root, current_language)])
 
 
-# and loop over all other versions from our yaml file
-# to set versions and languages
+# Open the versions.yaml to see what versions to build and what langs they supported
 with open("../versions.yaml", "r") as yaml_file:
   docs = yaml.safe_load(yaml_file)
 
+# if the current version isn't latest, append the version to the redirect string of the page, so that it links to the correct locale
 if (current_version != 'latest'):
   for language in docs[current_version].get('languages', []):
     html_context['languages'].append([language, "{}/{}/{}".format(pages_root, current_version, language)])
