@@ -24,8 +24,6 @@ def move_dir(src, dst):
 # List all Langs in the Locales folder for building
 langs += os.listdir("locales")
 
-os.environ["lang_array"] = langs
-
 # Iterate over all found languages and build then move each one to it's designated dir
 for i in langs:
    build_doc("latest", i, "py-rewrite")
