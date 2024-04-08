@@ -17,7 +17,6 @@ author = 'Cyrogon'
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
 extensions = []
-exclude_patterns = ["*.png"]
 templates_path = ['../templates']
 exclude_patterns = []
 
