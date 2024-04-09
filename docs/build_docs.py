@@ -11,7 +11,7 @@ def build_doc(version, language):
     os.environ["current_version"] = version
     os.environ["current_language"] = language
     os.environ['SPHINXOPTS'] = "-D language='{}'".format(language)
-    subprocess.run("TZ=UTC make html", shell=True)
+    subprocess.run("make html", shell=True)
 
 os.environ["build_all_docs"] = str(True)
 os.environ["pages_root"] = "https://cyrogon.github.io/TestLocaleSIT"

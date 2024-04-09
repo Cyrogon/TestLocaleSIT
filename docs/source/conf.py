@@ -16,7 +16,7 @@ author = 'Cyrogon'
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
-extensions = []
+extensions = ['sphinxcontrib.video']
 templates_path = ['../templates']
 exclude_patterns = []
 
@@ -39,8 +39,8 @@ build_all_docs = os.environ.get("build_all_docs", str(True))
 pages_root = os.environ.get("pages_root", "https://cyrogon.github.io/TestLocaleSIT")
 
 # Get the current language and version from the OS enviroment variables set in the build_docs.py
-current_language = os.environ.get("current_language")
-current_version = os.environ.get("current_version")
+current_language = os.environ.get("current_language", "en")
+current_version = os.environ.get("current_version", "latest")
 
 # Initialize the HTML context for later use
 html_context = {
