@@ -25,7 +25,7 @@ msgstr "Home away from sanity"
 
 #: ../../source/index.rst:4
 msgid "Welcome to Stay In Tarkov!"
-msgstr ""
+msgstr "Welcome to Stay In Tarkov! - But in Chinese"
 
 #: ../../source/index.rst:6
 msgid ""
