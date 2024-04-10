@@ -25,16 +25,14 @@ jobs:
       - name: build
         run: |
           pip3 install sphinx
-          pip3 install sphinx-js
           pip3 install sphinx_rtd_theme
-          pip3 install breathe
-          pip3 install linuxdoc
           pip3 install pyyaml
           npm install -g jsdoc
           git fetch --tags
           cd docs
           mkdir build
           python3 build_docs.py
+          pip install sphinxcontrib-video
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - name: Upload artifact
