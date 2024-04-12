@@ -46,7 +46,7 @@ Create the following folder structure on the drive of your choice, as long as it
    <details>
       <summary>Example directory layout</summary>
 
-|FileStructure|
+.. image:: images/DirectoryExample.png
 
 .. raw:: html
 

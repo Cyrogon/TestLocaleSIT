@@ -15,7 +15,3 @@
 
 .. role:: strike
     :class: strike
-
-.. |FileStructure| raw:: html
-
-   <img src="../images/DirectoryExample.png" style="width: 800px">
