@@ -32,6 +32,8 @@ for i in langs:
 # Move the index.html to the root pages directory so it redirects to the en docs
 subprocess.run("mv ./templates/index.html ../pages/index.html", shell=True)
 
+move_dir("./source/images", "../pages/images")
+
 # Open the versions files to see what versions to build and what langs they supported
 with open("versions.yaml", "r") as yaml_file:
   docs = yaml.safe_load(yaml_file)
